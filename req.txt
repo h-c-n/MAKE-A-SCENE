@@ -1,0 +1,12 @@
+flask
+SceneGraphParser
+torch
+matplotlib
+imageio
+torchvision
+imageio[all]
+opencv-python
+av
+graphviz
+scikit-image
+opencv-contrib-python

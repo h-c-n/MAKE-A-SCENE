@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+  <title>SceneGen</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href={{ url_for('static', filename="vendor/bootstrap/css/bootstrap.min.css" ) }} rel="stylesheet">
+
+
+  <!-- Additional CSS Files -->
+  <link rel="stylesheet" href={{ url_for('static', filename="assets/css/fontawesome.css" ) }}>
+  <link rel="stylesheet" href={{ url_for('static', filename="assets/css/templatemo-cyborg-gaming.css" ) }}>
+  <link rel="stylesheet" href={{ url_for('static', filename="assets/css/owl.css" ) }}>
+  <link rel="stylesheet" href={{ url_for('static', filename="assets/css/animate.css" ) }}>
+  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+  <style>
+    /* Dark theme */
+    .dark-modal .modal-content {
+      background-color: #333;
+      color: #fff;
+    }
+
+    .dark-modal .modal-header,
+    .dark-modal .modal-footer {
+      background-color: #222;
+      color: #fff;
+    }
+
+    /* Override Bootstrap's default styles */
+    .dark-modal .close {
+      color: #fff;
+    }
+
+    .dark-modal .modal-body {
+      background-color: #111;
+    }
+
+    /* Center the modal */
+    .modal-dialog {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <!-- ***** Logo Start ***** -->
+            <a href={{url_for('index')}} class="logo">
+              <img src={{ url_for('static', filename="assets/images/logo.png" ) }} alt="">
+            </a>
+            <!-- ***** Logo End ***** -->
+            <!-- ***** Search End ***** -->
+            <div class="search-input">
+
+            </div>
+            <!-- ***** Search End ***** -->
+            <!-- ***** Menu Start ***** -->
+            <ul class="nav">
+              <li><a href={{ url_for('index') }} class="active">Home</a></li>
+              <li></li>
+            </ul>
+            <a class='menu-trigger'>
+              <span>Menu</span>
+            </a>
+            <!-- ***** Menu End ***** -->
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="page-content">
+
+          <!-- ***** Banner Start ***** -->
+          <div class="main-banner" style="min-height: 70vh">
+            <div class="row">
+              <div class="col-lg-7">
+                <div class="gaming-library" id="start">
+                  <div class="col-lg-12">
+                    <div class="heading-section">
+                      <h4 style="text-transform: none">Try typing something</h4>
+                    </div>
+                    <form method="post" action="generate">
+                      <div class="item">
+                        <textarea name="text" rows="5" cols="50" placeholder="Type something..."
+                          style="display: block;margin: 50px auto;border-radius: 23px;background-color:#27292a;box-shadow: 1px 1px 2px 1px white;border-color: transparent;padding:10px;color:white;"></textarea>
+
+                        <a href="javascript:;" data-toggle="modal" data-target="#darkModal"
+                          style="color: white;text-align:center;width:100%;display: block;">show
+                          vocab</a>
+                      </div>
+                      <div class="col-lg-12">
+                        <div class="main-button">
+                          <button type="submit">Generate</button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <!-- ***** Gaming Library End ***** -->
+                </div>
+              </div>
+              <div class="col-lg-5">
+                <div style="margin-top: 60px;font-size: medium;">
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ***** Banner End ***** -->
+
+
+
+          <!-- ***** Gaming Library Start ***** -->
+
+        </div>
+      </div>
+    </div>
+    <div class="modal dark-modal modal-centered" id="darkModal">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h5 class="modal-title">Objects</h5>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+
+          <!-- Modal Body -->
+          <div class="modal-body" style="padding: 30px;">
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> animal
+            </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> apple </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> arm </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> back </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> background
+            </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> bag </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> ball </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> banana
+            </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> basket
+            </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> beach </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> bear </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> bed </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> bench </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> bike </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> bird </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> board </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> boat </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> book </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> boot </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> bottle
+            </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> bowl </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> box </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> boy </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> branch
+            </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> brick </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> building
+            </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> bus </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> bush </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> button
+            </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> cabinet
+            </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> cap </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> car </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> cat </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> ceiling
+            </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> chair </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> child </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> clock </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> cloud </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> coat </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> container
+            </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> counter
+            </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> cow </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> cup </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> curtain
+            </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> design
+            </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> dirt </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> dog </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> door </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> ear </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> edge </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> elephant
+            </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> engine
+            </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> eye </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> face </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> fence </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> field </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> finger
+            </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> flag </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> floor </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> flower
+            </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> food </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> foot </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> frame </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> giraffe
+            </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> girl </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> glass </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> glasses
+            </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> glove </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> grass </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> ground
+            </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> hair </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> hand </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> handle
+            </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> hat </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> head </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> headlight
+            </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> helmet
+            </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> hill </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> hole </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> horn </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> horse </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> house </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> jacket
+            </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> jean </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> key </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> kite </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> knob </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> lady </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> lamp </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> leaf </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> leg </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> letter
+            </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> light </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> line </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> logo </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> man </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> mirror
+            </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> motorcycle
+            </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> mountain
+            </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> mouth </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> neck </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> nose </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> number
+            </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> ocean </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> orange
+            </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> pant </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> paper </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> part </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> paw </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> people
+            </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> person
+            </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> photo </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> picture
+            </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> pillow
+            </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> pizza </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> plane </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> plant </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> plate </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> player
+            </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> pole </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> post </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> pot </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> railing
+            </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> reflection
+            </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> road </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> rock </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> roof </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> sand </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> seat </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> shadow
+            </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> sheep </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> shelf </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> shirt </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> shoe </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> short </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> sidewalk
+            </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> sign </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> sink </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> skateboard
+            </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> ski </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> sky </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> snow </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> sock </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> spot </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> stand </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> sticker
+            </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> stone </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> street
+            </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> stripe
+            </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> sunglass
+            </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> surfboard
+            </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> table </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> tail </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> tie </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> tile </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> tire </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> top </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> towel </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> track </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> train </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> tree </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> truck </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> trunk </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> umbrella
+            </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> vehicle
+            </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> wall </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> water </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> wave </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> wheel </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> window
+            </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> windshield
+            </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> wing </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> wire </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> woman </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> wood </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> word </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> writing
+            </span>
+            <span class="badge text-bg-light rounded-pill" style="font-size: inherit;margin-bottom: 8px;"> zebra </span>
+
+          </div>
+
+          <!-- Modal Footer -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <p>Copyright © 2023 <a href="">SceneGen</a> Company. All rights reserved.
+
+              <br>Design: <a href="" target="_blank" title="">HCN</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+    <!-- Scripts -->
+    <!-- Bootstrap core JavaScript -->
+    <script src={{ url_for('static', filename="vendor/jquery/jquery.min.js" ) }}></script>
+    <script src={{ url_for('static', filename="vendor/bootstrap/js/bootstrap.min.js" ) }}></script>
+
+    <!-- <script src={{ url_for('static', filename="assets/js/isotope.min.js" ) }}></script> -->
+    <script src={{ url_for('static', filename="assets/js/owl-carousel.js" ) }}></script>
+    <script src={{ url_for('static', filename="assets/js/tabs.js" ) }}></script>
+    <script src={{ url_for('static', filename="assets/js/popup.js" ) }}></script>
+    <script src={{ url_for('static', filename="assets/js/custom.js" ) }}></script>
+    <script src={{ url_for('static', filename="assets/js/jquery.min.js" ) }}></script>
+    <script src={{ url_for('static', filename="assets/js/bootstrap.min.js" ) }}></script>
+
+    <script>
+      function scrollto() {
+        document.getElementById("start").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+      }
+    </script>
+</body>
+
+</html>

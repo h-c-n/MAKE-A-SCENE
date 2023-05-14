@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <title>SceneGen</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href={{ url_for('static', filename="vendor/bootstrap/css/bootstrap.min.css" ) }} rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href={{ url_for('static', filename="assets/css/fontawesome.css" ) }}>
+    <link rel="stylesheet" href={{ url_for('static', filename="assets/css/templatemo-cyborg-gaming.css" ) }}>
+    <link rel="stylesheet" href={{ url_for('static', filename="assets/css/owl.css" ) }}>
+    <link rel="stylesheet" href={{ url_for('static', filename="assets/css/animate.css" ) }}>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+</head>
+
+<body>
+
+    <!-- ***** Preloader Start ***** -->
+    <div id="js-preloader" class="js-preloader">
+        <div class="preloader-inner">
+            <span class="dot"></span>
+            <div class="dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <!-- ***** Preloader End ***** -->
+
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href={{ url_for('index') }} class="logo">
+                            <img src={{ url_for('static', filename="assets/images/logo.png" ) }} alt="">
+                        </a>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Search End ***** -->
+                        <div class="search-input">
+
+                        </div>
+                        <!-- ***** Search End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                            <li><a href={{ url_for('index') }} class="active">Home</a></li>
+                            <li></li>
+                        </ul>
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="page-content">
+
+
+
+
+
+                    <!-- ***** Gaming Library Start ***** -->
+                    <div class="gaming-library" id="start">
+                        <div class="col-lg-12">
+                            <div class="heading-section">
+                                <h4>Result</h4>
+                                <div><img src="static/output/final.png"
+                                        style="height: 200px;width: 200px;display: block;margin:auto;"></div>
+
+
+                            </div>
+
+                        </div>
+
+                        <!-- ***** Gaming Library End ***** -->
+                    </div>
+                    <div class="gaming-library" id="start">
+                        <div class="col-lg-12">
+                            <div class="heading-section" style="overflow-x: auto;">
+
+                                <h4>Preprocessing</h4>
+                                <div
+                                    style="display:flex;flex-direction: row;align-items: center;justify-content: space-around;margin: 60px auto;">
+                                    <div>
+                                        <p style="color: white;">{{ txt }}</p>
+                                    </div>
+                                    <div><img src="static/output/sg000000.png"
+                                            style="height: 200px;width: 200px;display: block;margin:auto;"></div>
+                                    <div><img src="static/output/img000000.png" style="display: block;margin:auto;">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="main-button">
+                                <button type="button" onclick="window.location.replace('{{url_for('index')}}')">Return
+                                    to
+                                    Home</button>
+                            </div>
+                        </div>
+
+                        <!-- ***** Gaming Library End ***** -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <p>Copyright © 2023 <a href="">SceneGen</a> Company. All rights reserved.
+
+                            <br>Design: <a href="" target="_blank" title="">HCN</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+        <!-- Scripts -->
+        <!-- Bootstrap core JavaScript -->
+        <script src={{ url_for('static', filename="vendor/jquery/jquery.min.js" ) }}></script>
+        <script src={{ url_for('static', filename="vendor/bootstrap/js/bootstrap.min.js" ) }}></script>
+
+        <!-- <script src={{ url_for('static', filename="assets/js/isotope.min.js" ) }}></script> -->
+        <script src={{ url_for('static', filename="assets/js/owl-carousel.js" ) }}></script>
+        <script src={{ url_for('static', filename="assets/js/tabs.js" ) }}></script>
+        <script src={{ url_for('static', filename="assets/js/popup.js" ) }}></script>
+        <script src={{ url_for('static', filename="assets/js/custom.js" ) }}></script>
+
+        <script>
+            function scrollto() {
+                document.getElementById("start").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+            }
+        </script>
+</body>
+
+</html>
